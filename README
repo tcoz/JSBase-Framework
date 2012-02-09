@@ -1,0 +1,9 @@
+Created by Tim Consolazio, tcoz@tcoz.com
+
+JSBase Framework
+
+A lightweight JavaScript framework for creating typical web applications. Intended to be way lighter than something
+like Ext JS, while at the same time providing some best practice Javascript and IDE/MVC structure to keep components
+decoupled via notifications, etc.
+
+This is very, very much a work in progress at this point.
