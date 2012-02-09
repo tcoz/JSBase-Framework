@@ -1,0 +1,55 @@
+// original controllers
+var mainViewController = baseController ( { } );
+mainViewController.init = function ( view ) {
+    var that = this;
+    this.setView ( view );
+
+    view.init ( );
+    view.getScreenElement ( ).html ( mainPageRenderer ( ) );
+
+    view.getScreenElement ( ).click ( onViewClick );
+    function onViewClick ( ) {
+        that.dispatchControllerEvent ( 'mainviewclicked', 'MAIN VIEW CLICKED' );
+    }
+
+    testViewController.addControllerListener ( this, 'testviewclicked', onTestViewClicked );
+    function onTestViewClicked ( event ) {
+        that.getView ( ).getScreenElement ( ).text ( event.data );
+    };
+};
+
+var testViewController = baseController ( { } );
+testViewController.init = function ( view ) {
+    var that = this;
+    this.setView ( view );
+
+    view.init ( );
+    view.getScreenElement ( ).text ( "SOME OTHER TEXT" );
+
+    view.getScreenElement ( ).click ( onViewClick );
+    function onViewClick ( ) {
+        that.dispatchControllerEvent ( 'testviewclicked', 'TEST VIEW CLICKED' );
+    }
+
+    mainViewController.addControllerListener ( this, 'mainviewclicked', onMainViewClicked );
+    function onMainViewClicked ( event ) {
+        var svcCall = ajaxCall ( );
+        svcCall.callService ( 'GET', 'data/data.json', onCallResult, { } );
+    };
+
+    function onCallResult ( result ) {
+        that.getView ( ).getScreenElement ( ).html ( 'I heard mainview got clicked, so I made an ajax call and got back >> ' + result );
+    }
+};};
+
+
+
+// old test view
+var testView = baseView ( { } );
+testView.init = function ( ) {
+    this.setScreenElement ( function ( ) {
+        var element = $ ( '<div id="testViewScreen"></div>' ).appendTo ( '#maincontainer' );
+        element.addClass ( 'testViewStyle' );
+        return element;
+    } ( ) );
+};

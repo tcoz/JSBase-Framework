@@ -1,0 +1,60 @@
+<root>
+    <image id="banner">
+        <![CDATA[<img src="http://www.tcoz.com/newtcoz/images/banner.png" alt="tcoz tim consolazio banner" width="590" height="56">]]>
+    </image>
+    <paragraph position='r1c1'>
+        <![CDATA[
+            Tcoz.com is a digital attic related to my business as an independent software and RIA developer.
+            Tcoz Tech Services is my "Doing Business As", and represents the business entity of Tim Consolazio (me).
+            You'll find info on my latest projects, a list of services, general thoughts and blurbs on what I'm up to,
+            and so on.</br></br>
+            Please note that <strong> <a href="https://docs.google.com/document/d/180y3Vm0DD4qzXJjPyNRh2zVTp7tDqcIRhIL_64uweEc/edit?hl=en_US" target="_blank">my resume</a></strong>
+            may under no circumstances may be altered or edited in any way.</br></br>
+            Drop me a line at <a href="mailto:tcoz@tcoz.com"><strong>tcoz@tcoz.com</strong></a> if you have need of a developer with a
+            deep knowledge of technologies primarily related to delivery of media and information-focused applications
+            on the web (though desktop is within my skill set as well).
+        ]]>
+    </paragraph>
+    <paragraph position='r1c2'>
+        <![CDATA[
+            <strong>Please note:</strong></br></br>
+            <ul>
+                <li>I don't discuss rates I'm charging clients.</li>
+                <li>My rate varies depending on specific responsibilities in a given project (straight dev, management, architecture, etc.), as well as the arrangement (full-time onsite, partial telecommute, full-time offsite). </li>
+                <li><strong><a href="https://docs.google.com/document/d/180y3Vm0DD4qzXJjPyNRh2zVTp7tDqcIRhIL_64uweEc/edit?hl=en_US" target="_blank">My resume</a></strong> is available in PDF format, and may not be edited or altered in any way. </li>
+                <li>I don't offer discounted rates for W2. </li>
+                <li>I'm not a professional "data tier" guy, or a graphic designer/"Flash Designer". I'm an architect thinker that likes to code.</li>
+                <li>I'm in the NYC area, and can't relocate. </li>
+            </ul>
+        ]]>
+    </paragraph>
+    <paragraph position="r2c1">
+        <![CDATA[
+            <ul>
+                <li><strong>Advanced OOP</strong> skills in all  programming environments.</li>
+                <li><strong>ActionScript:</strong> AS3, RobotLegs, PureMVC, Mate, Flex framework, etc. Many, many years of experience. "Hero" sdk (mobile ActionScript-based apps).</li>
+                <li><strong>PHP:</strong> ver. 5+, Zend framework. Several projects.</li>
+                <li><strong>Java:</strong> Servlets/JSP, basic Hibernate, BlazeDS, OpenAMF, Objectify (GAE), etc. Java is my primary server-side language. Some Android dev using Java as well.</li>
+                <li><strong>Python:</strong> General development skills, particularly on GAE. I use Python more every day. Knowledge of Paramiko, Crypto, PyAMF, BeautifulSoup, etc.</li>
+                <li><strong>General Web:</strong> HTML/CSS/JS, some HTML5 (very little is standardized across browsers, but I keep my eye on it), AJAX, JQuery, etc. To me, this is all "utility". </li>
+           	</ul>
+        ]]>
+    </paragraph>
+    <paragraph position="r2c2">
+        <![CDATA[
+            <ul>
+                <li><strong>Environments:</strong> Mac, Linux, Windows. Half way decent as a general admin; I can build out pretty much any box as a general web/application server, troubleshoot basic security and permissions, etc. </li>
+                <li><strong>Data:</strong> various databases and data stores, e.g. MySQL, SQL Server, GAE Datastore, etc. I'm not a DBA at all, but I do know my way around general DB work. </li>
+                <li><strong>Cloud:</strong> work frequently with EC2 and Google App Engine.</li>
+                <li><strong>Documentation:</strong> Wireframes, general class and data modeling, primarily use OmniGraffle these days. </li>
+                <li><strong>Management:</strong> experience managing small, agile teams through project milestones, project plan creation and tracking, etc. SVN, Mantis, Bugzilla, Campfire, Active Collab, etc. </li>
+            </ul>
+        ]]>
+    </paragraph>
+    <paragraph position="r3c1">
+        Update this info yo
+    </paragraph>
+    <paragraph position="r3c2">
+        Best to update this info too
+    </paragraph>
+</root>

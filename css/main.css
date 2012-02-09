@@ -1,0 +1,14 @@
+.paragraph {
+    border-width: 3px;
+    border-color: #FFFFFF;
+    border-style: solid;
+    padding: 10px;
+    background-color: #EBEBEB;
+    vertical-align: top;
+    width: 46%;
+    color: #000000;
+    font-size: 12px;
+    font-family: 'Verdana';
+    display: inline-block;
+    white-space: normal;
+}
