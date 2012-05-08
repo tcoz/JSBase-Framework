@@ -1,11 +1,10 @@
-function UserDataSingleton ( )
+function SampleSingleton ( )
 {
    var instance = this;
 
-    this.username = "";
-    this.password = "";
+    this.destination = '';
 
-    UserDataSingleton = function ( ) {
+    SampleSingleton = function ( ) {
         return instance;
     };
 }

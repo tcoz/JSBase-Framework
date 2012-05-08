@@ -31,3 +31,5 @@ ajaxCall.execute = function ( spec ) {
         error : function ( error ) { spec.callback ( error.responseText ); }
     } );
 };
+
+CommandSingleton.getInstance ( ).setCommand ( { 'AJAX_CALL' : ajaxCall } );

@@ -1,71 +1,18 @@
-/* LOGIN VIEW */
+/* SAMPLE VIEW */
 
-var loginNewsView = ( vmturbo.loginAndNewsView = baseView ( ) ),
-    tabsView = ( vmturbo.mainTabsBarView = baseView ( ) ),
-    groupsDataGridView = ( vmturbo.groupsView = baseView ( ) ),
-    healthPieChartView = ( vmturbo.summaryHealthPieChartView = baseView ( ) );
+var sampleView = ( tcoz.sampleView = baseView ( ) );
 
-loginNewsView.LOGIN_SUBMITTED = 'login_submitted';
-loginNewsView.init = function ( ) {
+sampleView.EVENT_TRIGGERED = 'sampleview_event_triggered';
+sampleView.init = function ( ) {
 
     this.setScreenElement ( function ( ) {
 
         var element = '';
 
-        jQuery.get ( 'com/renderers/loginAndNews.html',
+        jQuery.get ( 'com/someproject/renderers/sampleRenderer.html',
             function ( data ) {
                 element = jQuery ( data ).appendTo ( '#maincontentcontainer' );
-            }
-        );
-        return element;
-
-    } ( ) );
-};
-
-tabsView.init = function ( ) {
-
-    this.setScreenElement ( function ( ) {
-
-        var element = '';
-
-        jQuery.get ( 'com/renderers/toptabs.html',
-            function ( data ) {
-                element = jQuery ( data ).appendTo ( '#maincontentcontainer' );
-            }
-        );
-        return element;
-
-    } ( ) );
-};
-
-/* DISPLAYS NAMED GROUP ENTITY DATA IN DATAGRID */
-
-groupsDataGridView.GROUPS_DATAGRID_ROW_CLICKED = 'groups_datagrid_row_clicked';
-groupsDataGridView.init = function ( ) {
-
-    this.setScreenElement ( function ( ) {
-
-        var element = '';
-
-        jQuery.get ( 'com/renderers/datagrid.html',
-            function ( data ) {
-                element = jQuery ( data ).appendTo ( '#hometab_top' );
-            }
-        );
-        return element;
-
-    } ( ) );
-};
-
-healthPieChartView.init = function ( ) {
-
-    this.setScreenElement ( function ( ) {
-
-        var element = '';
-
-        jQuery.get ( 'com/renderers/pieChart.html',
-            function ( data ) {
-                element = jQuery ( data ).appendTo ( '#hometab_bottom' );
+                jQuery ( '#samplerenderer_xmldatagoeshere').text ( sampleView.getData ( ) );
             }
         );
         return element;

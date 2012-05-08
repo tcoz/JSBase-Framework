@@ -1,44 +1,20 @@
 /* RETURN ALL ENTITIES FROM A GIVEN GROUP */
 
-var getGroupEntitiesByGroupName = ( vmturbo.getGroupEntitiesByGroupName = baseCommand ( ) ),
-    getEntityDataFromUUID = ( vmturbo.getEntityDataFromUUID = baseCommand ( ) );
+var sampleCommand = ( tcoz.sampleCommand = baseCommand ( ) );
 
-/* getGroupEntitiesByGroupName spec = { groupname : [e.g. PhysicalMachine], callback : [handlerfunc] } */
+sampleCommand.DATA_AVAILABLE = "samplecommand_data_available";
+sampleCommand.execute = function ( dataObj ) {
 
-getGroupEntitiesByGroupName.execute = function ( spec ) {
+    SampleSingleton.xmlFilePath = dataObj;
 
-    this.spec = spec;
-
-    var destination = 'http://' +
-                       UserDataSingleton.username + ':' +
-                       UserDataSingleton.password + '@' +
-                       vmturbo.appValues.SERVICE_CALL_ROOT + 'groups/GROUP-' + spec.groupname + '/entities';
-
-    getGroupEntitiesByGroupName.dispatchCommandNotification ( 'AJAX_CALL',
-        { 'destination' : destination, 'callback' : getGroupEntitiesByGroupName.onAjaxReturn }
+    // AJAX_CALL is already registered by the framework.
+    // It's triggered with a notification, but responds directly to a handler.
+    // You could add a notification, but using a direct handler for this particular case makes sense to me.
+    sampleCommand.dispatchCommandNotification ( 'AJAX_CALL',
+        { 'destination' : SampleSingleton.xmlFilePath, 'callback' : sampleCommand.onAjaxReturn }
     );
 };
 
-getGroupEntitiesByGroupName.onAjaxReturn = function ( event ) {
-    getGroupEntitiesByGroupName.spec.callback ( { 'spec' : getGroupEntitiesByGroupName.spec, 'result' : event.ajaxReturn } );
-};
-
-/* getEntityDataFromUUID spec = { uuid : [uuid], callback : [handlerfunc] }*/
-
-getEntityDataFromUUID.execute = function ( spec ) {
-
-    this.spec = spec;
-
-    var destination = 'http://' +
-        UserDataSingleton.username + ':' +
-        UserDataSingleton.password + '@' +
-        vmturbo.appValues.SERVICE_CALL_ROOT + 'markets/Market/entities/' + spec.uuid;
-
-    getEntityDataFromUUID.dispatchCommandNotification ( 'AJAX_CALL',
-        { 'destination' : destination, 'callback' : getEntityDataFromUUID.onAjaxReturn }
-    );
-};
-
-getEntityDataFromUUID.onAjaxReturn = function ( event ) {
-    getEntityDataFromUUID.spec.callback ( { 'spec' : getEntityDataFromUUID.spec, 'result' : event.ajaxReturn } );
+sampleCommand.onAjaxReturn = function ( dataObj ) {
+    sampleCommand.dispatchControllerNotification ( sampleCommand.DATA_AVAILABLE, dataObj.ajaxReturn );
 };

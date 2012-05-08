@@ -1,14 +1,44 @@
-.paragraph {
-    border-width: 3px;
-    border-color: #FFFFFF;
-    border-style: solid;
-    padding: 10px;
-    background-color: #EBEBEB;
-    vertical-align: top;
-    width: 46%;
-    color: #000000;
-    font-size: 12px;
-    font-family: 'Verdana';
-    display: inline-block;
-    white-space: normal;
+body {
+    font-family: Arial,sans-serif;
+    font-size: 11px;
+    background-color: #005899;
 }
+
+.maincontentcontainer_style {
+    width: 1024px;
+}
+
+h1 {
+    font-size: 14px;
+}
+
+h2 {
+    font-size: 12px;
+}
+
+a {
+    color: #548dc4;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+img {
+    border: 0;
+}
+
+/* CSS 3 FEATURES */
+.roundedcorners {
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+
+.boxshadow {
+    -moz-box-shadow: 4px 4px 2px #000;
+    -webkit-box-shadow: 4px 4px 2px #000;
+    box-shadow: 4px 4px 2px #000;
+}
+
+

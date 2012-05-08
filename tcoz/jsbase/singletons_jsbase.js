@@ -41,13 +41,13 @@ CommandSingleton.prototype = {
         this.commands.push ( command );
     },
 
-    runCommand : function ( type, spec ) {
+    runCommand : function ( type, dataObj ) {
         var i, command;
 
         for ( i = 0; i < this.commands.length; i++ ) {
             if ( this.commands [ i ].hasOwnProperty ( type ) ) {
                 command = this.commands [ i ] [ type ];
-                command.execute ( spec );
+                command.execute ( dataObj );
                 break;
             }
         }
@@ -90,7 +90,7 @@ ControllerSingleton.prototype = {
         }
     },
 
-    notifyControllers : function ( type, data ) {
+    notifyControllers : function ( type, dataObj ) {
         var i, j, controller, listener;
 
         for ( i = 0; i < this.controllers.length; i += 1 ) {
@@ -98,7 +98,7 @@ ControllerSingleton.prototype = {
             for ( j = 0; j < controller.getNotificationListeners ( ).length; j += 1 ) {
                 listener = controller.getNotificationListeners ( ) [ j ];
                 if ( listener === type ) {
-                    controller.notify ( { 'type' : type, 'data' : data } );
+                    controller.notify ( { 'type' : type, 'data' : dataObj } );
                 }
             }
         }

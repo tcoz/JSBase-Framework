@@ -1,28 +1,45 @@
 <html>
 
 <head>
-    <title>Modules Tests</title>
+    <title>VMTurbo JavaScript UI POC</title>
+
+    <!-- LOGGING FRAMEWORK -->
+    <script type="text/javascript" src="lib/blackbirdjs/blackbird.js"></script>
+    <link type="text/css" rel="Stylesheet" href="lib/blackbirdjs/blackbird.css" />
+
+    <!-- CSS for the app -->
     <link rel="stylesheet" type="text/css" href="css/main.css">
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script type="text/javascript" src="js/com/tcoz/jsbase/jsbase.js"></script>
-    <script type="text/javascript" src="js/com/tcoz/jsbase/singletons.js"></script>
-    <script type="text/javascript" src="js/com/tcoz/jsbase/commands.js"></script>
-    <script type="text/javascript" src="js/com/tcoz/jsbase/views.js"></script>
-    <script type="text/javascript" src="js/com/tcoz/jsbase/controllers.js"></script>
-    <script type="text/javascript" src="js/com/tcoz/jsbase/enums.js"></script>
-    <script type="text/javascript" src="js/com/tcoz/jsbase/utils.js"></script>
-    <script type="text/javascript" src="js/main.js"></script>
+
+    <!-- JQuery library, JQuery UI and theme CSS -->
+    <script type="text/javascript" src="lib/jquery/jquery-1.7.2.min.js"></script>
+
+    <!-- JSBase Framework -->
+    <script type="text/javascript" src="tcoz/jsbase/jsbase.js"></script>
+    <script type="text/javascript" src="tcoz/jsbase/singletons_jsbase.js"></script>
+    <script type="text/javascript" src="tcoz/jsbase/utils_jsbase.js"></script>
+    <script type="text/javascript" src="tcoz/jsbase/commands_jsbase.js"></script>
+
+    <!-- App-specific code -->
+    <script type="text/javascript" src="com/someproject/main.js"></script>
+    <script type="text/javascript" src="com/someproject/ui/singletons.js"></script>
+    <script type="text/javascript" src="com/someproject/ui/commands.js"></script>
+    <script type="text/javascript" src="com/someproject/ui/views.js"></script>
+    <script type="text/javascript" src="com/someproject/ui/controllers.js"></script>
+    <script type="text/javascript" src="com/someproject/ui/enums.js"></script>
+    <script type="text/javascript" src="com/someproject/ui/parsers.js"></script>
+
 </head>
 
 <body>
+
 <script>
     jQuery ( document ).ready ( function ( ) {
        startApp ( );
-    });
+    } );
 </script>
 
-<div id="centercontainer" width="100%" align="center">
-    <div id="maincontainer" align="left" style="width : 820px"></div>
+<div id="centercontainer" style="width: 100%" align="center">
+    <div id="maincontentcontainer" class="maincontentcontainer_style boxshadow"></div>
 </div>
 
 </body>

@@ -23,7 +23,8 @@ var baseView = function ( ) {
     viewlisteners = [ ],
     screenElement = null,
     i = 0,
-    handler = null;
+    handler = null,
+    dataObj = null;
 
     that.getScreenElement = function ( ) {
         return screenElement;
@@ -49,6 +50,14 @@ var baseView = function ( ) {
                 break;
             }
         }
+    };
+
+    that.setData = function ( data ) {
+        dataObj = data;
+    };
+
+    that.getData = function ( ) {
+        return dataObj;
     };
 
     return that;
@@ -105,6 +114,10 @@ var baseCommand = function ( ) {
 
     that.dispatchCommandNotification = function ( type, data ) {
         CommandSingleton.getInstance ( ).runCommand ( type, data );
+    };
+
+    that.dispatchControllerNotification = function ( type, data ) {
+        ControllerSingleton.getInstance ().notifyControllers ( type, data );
     };
 
     return that;

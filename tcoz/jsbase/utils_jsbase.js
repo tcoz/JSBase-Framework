@@ -38,9 +38,9 @@ String.prototype.trim = function ( ) {
 
 /* namespace utils_jsbase */
 
-var utils_jsbase = { };
+var utils_tcoz_jsbase = { };
 
-utils_jsbase.htmlEscape = function ( str ) {
+utils_tcoz_jsbase.htmlEscape = function ( str ) {
     return String(str)
         .replace(/&/g, '&amp;')
         .replace(/"/g, '&quot;')
@@ -49,7 +49,7 @@ utils_jsbase.htmlEscape = function ( str ) {
         .replace(/>/g, '&gt;');
 };
 
-utils_jsbase.createXMLDocFromString = function ( str ) {
+utils_tcoz_jsbase.createXMLDocFromString = function ( str ) {
     var xmlDoc = null;
 
     if ( window.DOMParser )
@@ -67,7 +67,7 @@ utils_jsbase.createXMLDocFromString = function ( str ) {
     return xmlDoc;
 };
 
-utils_jsbase.fromXMLToString = function ( xmlDOMObject ) {
+utils_tcoz_jsbase.fromXMLToString = function ( xmlDOMObject ) {
     var serialized = null;
 
     try {
