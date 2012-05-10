@@ -7,4 +7,6 @@ function SampleSingleton ( )
     SampleSingleton = function ( ) {
         return instance;
     };
+
+    return instance;
 }
