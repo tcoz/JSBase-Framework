@@ -32,4 +32,4 @@ ajaxCall.execute = function ( spec ) {
     } );
 };
 
-CommandSingleton.getInstance ( ).setCommand ( { 'AJAX_CALL' : ajaxCall } );
+CommandSingleton ( ).setCommand ( { 'AJAX_CALL' : ajaxCall } );

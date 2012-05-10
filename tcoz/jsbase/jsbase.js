@@ -78,11 +78,11 @@ var baseController = function ( ) {
     };
 
     that.dispatchControllerNotification = function ( type, data ) {
-        ControllerSingleton.getInstance ().notifyControllers ( type, data );
+        ControllerSingleton ( ).notifyControllers ( type, data );
     };
 
     that.dispatchCommandNotification = function ( type, data ) {
-        CommandSingleton.getInstance ( ).runCommand ( type, data );
+        CommandSingleton ( ).runCommand ( type, data );
     };
 
     that.setNotificationListener = function ( notification ) {
@@ -113,11 +113,11 @@ var baseCommand = function ( ) {
     var that = { };
 
     that.dispatchCommandNotification = function ( type, data ) {
-        CommandSingleton.getInstance ( ).runCommand ( type, data );
+        CommandSingleton ( ).runCommand ( type, data );
     };
 
     that.dispatchControllerNotification = function ( type, data ) {
-        ControllerSingleton.getInstance ().notifyControllers ( type, data );
+        ControllerSingleton ( ).notifyControllers ( type, data );
     };
 
     return that;

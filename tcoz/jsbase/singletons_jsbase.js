@@ -21,27 +21,15 @@
 
 function CommandSingleton ( )
 {
-    if ( arguments.callee.instance )
-        return arguments.callee.instance;
+    var instance = this;
 
-    arguments.callee.instance = this;
     this.commands = [ ];
-}
 
-CommandSingleton.getInstance = function ( )
-{
-    return new CommandSingleton ( );
-};
-
-CommandSingleton.prototype = {
-
-    constructor : CommandSingleton,
-
-    setCommand : function ( command ) {
+    this.setCommand = function ( command ) {
         this.commands.push ( command );
-    },
+    };
 
-    runCommand : function ( type, dataObj ) {
+    this.runCommand = function ( type, dataObj ) {
         var i, command;
 
         for ( i = 0; i < this.commands.length; i++ ) {
@@ -51,34 +39,30 @@ CommandSingleton.prototype = {
                 break;
             }
         }
-    }
-};
+    };
+
+    CommandSingleton = function ( ) {
+        return instance;
+    };
+
+    return instance;
+}
+
+
 
 /* CONTROLLERSINGLETON, handles registration of, and notificaton listeners, for controllers */
 
 function ControllerSingleton ( )
 {
-    if ( arguments.callee.instance )
-        return arguments.callee.instance;
+    var instance = this;
 
-    arguments.callee.instance = this;
     this.controllers = [ ];
-}
 
-ControllerSingleton.getInstance = function ( )
-{
-    return new ControllerSingleton ( );
-};
-
-ControllerSingleton.prototype = {
-
-    constructor : ControllerSingleton,
-
-    setController : function ( controller ) {
+    this.setController = function ( controller ) {
         this.controllers.push ( controller );
-    },
+    };
 
-    removeController : function ( removeController ) {
+    this.removeController = function ( removeController ) {
         var i, controller;
 
         for ( i = 0; i < this.controllers.length; i += 1 ) {
@@ -88,9 +72,9 @@ ControllerSingleton.prototype = {
                 break;
             }
         }
-    },
+    };
 
-    notifyControllers : function ( type, dataObj ) {
+    this.notifyControllers = function ( type, dataObj ) {
         var i, j, controller, listener;
 
         for ( i = 0; i < this.controllers.length; i += 1 ) {
@@ -102,5 +86,11 @@ ControllerSingleton.prototype = {
                 }
             }
         }
-    }
-};
+    };
+
+    ControllerSingleton = function ( ) {
+        return instance;
+    };
+
+    return instance;
+}

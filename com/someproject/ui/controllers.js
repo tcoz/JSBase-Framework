@@ -2,7 +2,7 @@
 var sampleController = ( tcoz.sampleController = baseController ( ) );
 
 /* Enable notifications for whatever controllers want them */
-ControllerSingleton.getInstance ( ).setController ( sampleController );
+ControllerSingleton ( ).setController ( sampleController );
 
 /* --- Add your controllers --- */
 
