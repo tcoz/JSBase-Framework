@@ -1,9 +1,15 @@
 /* Sample useful parser, using the tcoz_jsbase utils */
 
-tcoz.parseXMLAttribute = function ( attributeName, dataToParse ) {
+tcoz.parseXMLAttribute = function ( elementName, attributeName, dataToParse ) {
 
     var xmlDoc = utils_tcoz_jsbase.createXMLDocFromString ( dataToParse ),
-        entities = xmlDoc.getElementsByTagName ( 'TheElementName' );
+        entities = xmlDoc.getElementsByTagName ( elementName),
+        entityVals = [ ],
+        i = 0;
 
-    return entities [ 0 ].getAttribute ( attributeName );
+    for ( i = 0; i < entities.length; i += 1 ) {
+       entityVals.push ( entities [ i ].getAttribute ( attributeName ) );
+    }
+
+    return entityVals;
 };

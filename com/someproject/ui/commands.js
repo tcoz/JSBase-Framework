@@ -1,20 +1,17 @@
 /* RETURN ALL ENTITIES FROM A GIVEN GROUP */
 
-var sampleCommand = ( tcoz.sampleCommand = baseCommand ( ) );
+var getEntityDataCommand = ( tcoz.getEntityDataCommand = baseCommand ( ) );
 
-sampleCommand.DATA_AVAILABLE = "samplecommand_data_available";
-sampleCommand.execute = function ( dataObj ) {
+getEntityDataCommand.DATA_AVAILABLE = "getEntityDataCommand_data_available";
+getEntityDataCommand.execute = function ( dataObj ) {
 
-    SampleSingleton.xmlFilePath = dataObj;
+    var destinationURL = StartupSingleton ().vmEntityTwoHourSnapshots;
 
-    // AJAX_CALL is already registered by the framework.
-    // It's triggered with a notification, but responds directly to a handler.
-    // You could add a notification, but using a direct handler for this particular case makes sense to me.
-    sampleCommand.dispatchCommandNotification ( 'AJAX_CALL',
-        { 'destination' : SampleSingleton.xmlFilePath, 'callback' : sampleCommand.onAjaxReturn }
+    getEntityDataCommand.dispatchCommandNotification ( 'AJAX_CALL',
+        { 'destination' : destinationURL, 'callback' : getEntityDataCommand.onAjaxReturn }
     );
 };
 
-sampleCommand.onAjaxReturn = function ( dataObj ) {
-    sampleCommand.dispatchControllerNotification ( sampleCommand.DATA_AVAILABLE, dataObj.ajaxReturn );
+getEntityDataCommand.onAjaxReturn = function ( dataObj ) {
+    getEntityDataCommand.dispatchControllerNotification ( getEntityDataCommand.DATA_AVAILABLE, dataObj.ajaxReturn );
 };

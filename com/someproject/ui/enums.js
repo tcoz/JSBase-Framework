@@ -1,8 +1,8 @@
 tcoz.appValues = function ( ) {
 
-    this.startup_data_path = 'data/startupdata.xml';
+    this.entity_data_info = 'entitydatavalue';
 
     return {
-        STARTUP_DATA_PATH : this.startup_data_path
+        ENTITY_DATA_INFO : this.entity_data_info
     };
 } ( );
